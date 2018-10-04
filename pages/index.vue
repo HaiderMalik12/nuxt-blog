@@ -12,16 +12,22 @@
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
         <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
       </div>
+      {{posts}}
     </div>
   </section>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
-
+import {mapState} from 'vuex';
 export default {
   components: {
     Logo
+  },
+  computed: {
+    ...mapState({
+      posts: state => state.post.posts
+    })
   }
 }
 </script>
