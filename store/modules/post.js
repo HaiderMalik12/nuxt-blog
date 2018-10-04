@@ -9,6 +9,9 @@ const mutations = {
   },
   SET_POST(state, payload) {
     state.singlePost = Object.assign({}, state.singlePost, payload)
+  },
+  SAVE_POST(state, payload) {
+    state.posts.push(payload)
   }
 }
 const actions = {
@@ -17,6 +20,10 @@ const actions = {
   },
   setPost({ commit }, payload) {
     commit('SET_POST', payload)
+  },
+  async savePost({ commit }, payload) {
+    const { data } = await this.$axios.post('/posts', payload)
+    commit('SAVE_POST', data)
   }
 }
 

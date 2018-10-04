@@ -29,6 +29,11 @@
       "id": "6",
       "title": "Learn Sails.js",
       "description": "use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the "
+    },
+    {
+      "id": "1538652632528",
+      "title": "Hello viue",
+      "description": "You are running Vue in development mode.\nMake sure to turn on production mode when deploying for production.\nSee more tips at https://vuejs.org/guide/deployment.html"
     }
   ]
 }

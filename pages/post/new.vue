@@ -36,7 +36,12 @@ methods:{
   onSubmit(formName){
       this.$refs[formName].validate((valid) => {
           if (valid) {
-            alert('submit!');
+            this.$store.dispatch('savePost', {
+              id: Date.now().toString(),
+              title: this.form.title,
+              description: this.form.description
+            });
+            this.$router.push({path : '/post/list'})
           } else {
             console.log('error submit!!');
             return false;
