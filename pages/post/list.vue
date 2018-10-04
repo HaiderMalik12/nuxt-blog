@@ -6,7 +6,7 @@
           <span>
             <h3>{{post.title}}</h3>
           </span>
-          <el-button style="float: right; padding: 3px 0" type="text">View Details</el-button>
+          <el-button style="float: right; padding: 3px 0" type="text" @click="viewDetails(post.id)">View Details</el-button>
         </div>
         <p>{{post.description.substr(0, 120)}}</p>
       </el-card>
@@ -19,13 +19,22 @@ import {mapState} from 'vuex';
 export default {
 name: 'PostList',
 async fetch({store, $axios, error}){
+  try{
  const {data} = await $axios.get('/posts');
  store.dispatch('setPosts', data);
+  }catch(err){
+    error({statusCode: 500, message: 'Ops, something went wrong'})
+  }
 },
 computed: {
   ...mapState({
     posts: state => state.post.posts
   })
+},
+methods: {
+  viewDetails(postId){
+    this.$router.push({path: `/post/${postId}/details`})
+  }
 }
 }
 </script>
