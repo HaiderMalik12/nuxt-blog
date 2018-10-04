@@ -1,9 +1,16 @@
 <template>
-  <div>
-    <h1>Post List</h1>
-    <ol>
-      <li v-for="post in posts" :key="post.id">{{post.title}} </li>
-    </ol>
+  <div class="container">
+    <el-main>
+      <el-card class="box-card" v-for="post in posts" :key="post.id" style="margin-bottom:10px">
+        <div slot="header" class="clearfix">
+          <span>
+            <h3>{{post.title}}</h3>
+          </span>
+          <el-button style="float: right; padding: 3px 0" type="text">View Details</el-button>
+        </div>
+        <p>{{post.description}}</p>
+      </el-card>
+    </el-main>
   </div>
 </template>
 
