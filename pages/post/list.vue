@@ -18,6 +18,10 @@
 import {mapState} from 'vuex';
 export default {
 name: 'PostList',
+async fetch({store, $axios, error}){
+ const {data} = await $axios.get('/posts');
+ store.dispatch('setPosts', data);
+},
 computed: {
   ...mapState({
     posts: state => state.post.posts
