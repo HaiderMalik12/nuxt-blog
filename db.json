@@ -2,8 +2,8 @@
   "posts": [
     {
       "id": "1",
-      "title": "Learn Node",
-      "description": "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+      "title": "Learn AWS Serverless",
+      "description": "AWS Serverless It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
     },
     {
       "id": "2",

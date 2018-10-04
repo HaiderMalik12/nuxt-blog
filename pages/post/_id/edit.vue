@@ -55,8 +55,8 @@ methods:{
   onSubmit(formName){
       this.$refs[formName].validate((valid) => {
           if (valid) {
-            this.$store.dispatch('savePost', {
-              id: Date.now().toString(),
+            this.$store.dispatch('updatePost', {
+              id: this.post.id,
               title: this.form.title,
               description: this.form.description
             });
