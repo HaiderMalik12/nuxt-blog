@@ -28,6 +28,11 @@ computed: {
   ...mapState({
     post : state => state.post.singlePost
   })
+},
+methods: {
+  editPost(postId){
+    this.$router.push({path: `/post/${postId}/edit`})
+  }
 }
 }
 </script>
