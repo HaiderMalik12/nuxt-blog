@@ -7,7 +7,7 @@
             <h3>{{post.title}}</h3>
           </span>
           <el-button style="float: right; padding: 3px 0" type="text" @click="editPost(post.id)">Edit</el-button>
-          <el-button style="float: right; padding: 3px 0" type="text" @click="deletePost(post.id)">Delete</el-button>
+          <el-button style="float: right; padding: 3px 0" type="text" @click="deletePost(post)">Delete</el-button>
         </div>
         <p>{{post.description}}</p>
       </el-card>
@@ -32,6 +32,10 @@ computed: {
 methods: {
   editPost(postId){
     this.$router.push({path: `/post/${postId}/edit`})
+  },
+  deletePost(post){
+    this.$store.dispatch('deletePost', post);
+    this.$router.push({path: `/post/list`})
   }
 }
 }

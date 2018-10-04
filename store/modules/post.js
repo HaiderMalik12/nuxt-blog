@@ -17,6 +17,10 @@ const mutations = {
     const index = state.posts.findIndex(p => p.id === payload.id)
     state.posts[index].title = payload.title
     state.posts[index].description = payload.description
+  },
+  DELETE_POST(state, payload) {
+    const index = state.posts.findIndex(p => p.id === payload.id)
+    state.posts.splice(index, 1)
   }
 }
 const actions = {
@@ -33,6 +37,10 @@ const actions = {
   async updatePost({ commit }, payload) {
     const { data } = await this.$axios.patch(`/posts/${payload.id}`, payload)
     commit('UPDATE_POST', data)
+  },
+  async deletePost({ commit }, payload) {
+    const { data } = await this.$axios.delete(`/posts/${payload.id}`)
+    commit('DELETE_POST', payload)
   }
 }
 
