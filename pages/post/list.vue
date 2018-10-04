@@ -8,7 +8,7 @@
           </span>
           <el-button style="float: right; padding: 3px 0" type="text">View Details</el-button>
         </div>
-        <p>{{post.description}}</p>
+        <p>{{post.description.substr(0, 120)}}</p>
       </el-card>
     </el-main>
   </div>
